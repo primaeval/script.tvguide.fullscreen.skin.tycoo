@@ -110,13 +110,12 @@
             <width>1280</width>
             <height>720</height>
             <colordiffuse>white</colordiffuse>
-            <texture>white_snow.png</texture>
             <aspectratio>stretch</aspectratio>
             <align>center</align>
             <aligny>center</aligny>
             <animation type="Conditional" condition="!Control.IsVisible(5000)"><effect type="fade" end="100" center="1250,690" time="200"/></animation>
             <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-            <visible>false</visible>
+            <visible>true</visible>
         </control>
 
         <control type="image">
@@ -1658,7 +1657,7 @@
                     <description>marker for program image box</description>
                     <texture>boxmarker.png</texture>
                     <visible>false</visible>
-                </control> 
+                </control>
 
                 <control type="image">
                     <description>Program image fallback custom</description>
@@ -1670,10 +1669,10 @@
                     <aligny>top</aligny>
                     <fadetime>50</fadetime>
                     <texture>TV_testcard.png</texture>
-                    <visible>StringCompare(Control.GetLabel(7027),)+StringCompare(Control.GetLabel(7023),)</visible>
+                    <visible>StringCompare(Control.GetLabel(7023),)+StringCompare(Control.GetLabel(7027),)</visible>
                 </control>
                 <control type="image" id="7023">
-                    <description>Program logo / Source logo top right</description>
+                    <description>PIP program/logo image</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>150</width>
@@ -1681,27 +1680,29 @@
                     <aspectratio align="left">keep</aspectratio>
                     <aligny>top</aligny>
                     <fadetime>50</fadetime>
-                    <visible>![Player.HasMedia|Control.IsVisible(5000)]</visible>
+                    <texture>-</texture>
+                    <visible>true</visible>
                 </control>
                 <control type="image" id="7027">
-                    <description>Program logo / Source logo scale</description>
+                    <description>PIP program/logo image scale</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>150</width>
                     <height>190</height>
-                    <aspectratio align="left">keep</aspectratio>
+                    <aspectratio align="left">scale</aspectratio>
                     <aligny>top</aligny>
                     <fadetime>50</fadetime>
-                    <visible>![Player.HasMedia|Control.IsVisible(5000)]</visible>
+                    <texture>-</texture>
+                    <visible>true</visible>
                 </control>
                 <control type="label" id="5002">
                     <description>visibility marker for pip</description>
                 </control>
                 <control type="videowindow">
-                    <description>video window</description>
-                    <posx>0</posx>
+                    <description>Main PIP video window</description>
+                    <posx>-18</posx>
                     <posy>0</posy>
-                    <width>150</width>
+                    <width>176</width>
                     <height>190</height>
                     <aspectratio align="left">keep</aspectratio>
                     <aligny>top</aligny>
